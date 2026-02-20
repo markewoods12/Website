@@ -3,6 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import BlogPostCard from "@/components/BlogPostCard";
 import { projects } from "@/data/projects";
 import { getAllPosts } from "@/lib/blog";
+import Image from "next/image";
 import Link from "next/link";
 
 const pillars = [
@@ -35,8 +36,8 @@ export default function Home() {
       <Hero />
 
       {/* What I Do */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-12 border-b border-border pb-8">
+      <section className="mx-auto max-w-6xl px-6 py-14">
+        <div className="mb-8 border-b border-border pb-6">
           <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
             01
           </span>
@@ -64,8 +65,8 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-12 flex items-end justify-between border-b border-border pb-8">
+      <section className="mx-auto max-w-6xl px-6 py-14">
+        <div className="mb-8 flex items-end justify-between border-b border-border pb-6">
           <div>
             <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
               02
@@ -88,10 +89,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Bullish IPO Highlight */}
+      <section className="mx-auto max-w-6xl px-6 py-14">
+        <Link href="/ipo" className="group block border border-border bg-card rounded-sm overflow-hidden transition-all duration-300 hover:border-accent/25 hover:bg-card-hover">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="relative h-64 md:h-auto">
+              <Image
+                src="/Bullish-OB-Photo--20250813-CC-PRESS-70.jpg"
+                alt="Bullish NYSE Opening Bell"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+            <div className="p-8 flex flex-col justify-center">
+              <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-3">
+                August 13, 2025
+              </span>
+              <h3 className="font-heading text-2xl italic text-foreground mb-3">
+                Bullish Goes Public
+              </h3>
+              <p className="text-sm leading-relaxed text-muted mb-4">
+                $BLSH listed on the NYSE. After years of building, our team rang the Opening Bell at 11 Wall Street.
+              </p>
+              <span className="font-mono text-[10px] tracking-widest uppercase text-accent/70 group-hover:text-accent transition-colors">
+                View photos →
+              </span>
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
-        <section className="mx-auto max-w-6xl px-6 py-24">
-          <div className="mb-12 flex items-end justify-between border-b border-border pb-8">
+        <section className="mx-auto max-w-6xl px-6 py-14">
+          <div className="mb-8 flex items-end justify-between border-b border-border pb-6">
             <div>
               <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
                 03
@@ -116,8 +148,8 @@ export default function Home() {
       )}
 
       {/* Newsletter CTA */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="border border-border bg-card rounded-sm p-12">
+      <section className="mx-auto max-w-6xl px-6 py-14">
+        <div className="border border-border bg-card rounded-sm p-8">
           <div className="max-w-xl mx-auto text-center">
             <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-4">
               04

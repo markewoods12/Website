@@ -21,7 +21,7 @@ const expertise = [
 
 const experience = [
   {
-    title: "Chief Product Officer",
+    title: "Head of Product",
     company: "Bullish",
     location: "Radford, VA (remote)",
     period: "Jan 2022 — Present",
@@ -117,7 +117,7 @@ export default function AboutPage() {
         </div>
         <div className="space-y-4 text-base leading-relaxed text-muted max-w-2xl">
           <p>
-            I&apos;m the Chief Product Officer at Bullish, based in Radford, Virginia, where I lead
+            I&apos;m the Head of Product at Bullish, based in Radford, Virginia, where I lead
             Product Management and Product Design across the full breadth of Bullish Group —
             Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices. It&apos;s a rare
             scope: one role spanning a regulated digital asset exchange, the world&apos;s most trusted

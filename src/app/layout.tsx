@@ -26,13 +26,13 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.markewoods.com"),
   title: {
-    default: "Mark Woods — Chief Product Officer",
+    default: "Mark Woods — Head of Product",
     template: "%s | Mark Woods",
   },
   description:
-    "Mark Woods — Chief Product Officer at Bullish. Leading product strategy across digital asset exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices.",
+    "Mark Woods — Head of Product at Bullish. Leading product strategy across digital asset exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices.",
   openGraph: {
-    title: "Mark Woods — Chief Product Officer",
+    title: "Mark Woods — Head of Product",
     description:
       "Leading product strategy at the intersection of finance and technology. CPO @ Bullish.",
     url: "https://www.markewoods.com",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/WoodsHeadshots-24.jpg",
         width: 1200,
         height: 630,
-        alt: "Mark Woods — Chief Product Officer",
+        alt: "Mark Woods — Head of Product",
       },
     ],
     type: "website",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@markewoods12",
     creator: "@markewoods12",
-    title: "Mark Woods — Chief Product Officer",
+    title: "Mark Woods — Head of Product",
     description:
       "CPO @ Bullish. Leading product at the intersection of finance and technology.",
     images: ["/WoodsHeadshots-24.jpg"],
