@@ -21,9 +21,9 @@ const expertise = [
 
 const experience = [
   {
-    title: "Head of Product",
+    title: "Chief Product Officer",
     company: "Bullish",
-    location: "New York, NY (remote)",
+    location: "Radford, VA (remote)",
     period: "Jan 2022 — Present",
     description:
       "Responsible for the Product Management & Product Design organizations across all of Bullish Group — Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices.",
@@ -31,7 +31,7 @@ const experience = [
   {
     title: "Vice President, Product Management",
     company: "Bullish",
-    location: "Blacksburg, VA",
+    location: "Radford, VA (remote)",
     period: "Jul 2021 — Dec 2021",
     description:
       "Led multiple teams building the blockchain-based systems supporting the Bullish exchange platform, including Custody, Authentication & Authorization, and Core Blockchain — while simultaneously supporting Block.one.",
@@ -117,16 +117,17 @@ export default function AboutPage() {
         </div>
         <div className="space-y-4 text-base leading-relaxed text-muted max-w-2xl">
           <p>
-            I&apos;m a Product Executive based in Blacksburg, Virginia, with over 15 years of experience
-            leading product management, financial systems, and technology organizations. I&apos;m currently
-            Head of Product at Bullish, where I oversee Product Management and Product Design across
-            Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices.
+            I&apos;m the Chief Product Officer at Bullish, based in Radford, Virginia, where I lead
+            Product Management and Product Design across the full breadth of Bullish Group —
+            Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices. It&apos;s a rare
+            scope: one role spanning a regulated digital asset exchange, the world&apos;s most trusted
+            crypto media brand, institutional-grade market data, and benchmark indices.
           </p>
           <p>
-            My background spans fintech, blockchain, enterprise software, and clinical research —
-            giving me a perspective that bridges deep technical complexity with business strategy.
-            I&apos;m passionate about building and scaling high-performing product teams, defining
-            long-range roadmaps, and delivering software that creates real value.
+            My background spans digital assets, fintech, blockchain, enterprise software, and
+            clinical research — giving me a perspective that bridges deep technical complexity with
+            business strategy. I&apos;m passionate about building and scaling high-performing product
+            teams, defining long-range roadmaps, and shipping products that create real value at scale.
           </p>
           <p>
             Outside of work, I&apos;ve spent 20+ years volunteering as a mentor and coach with

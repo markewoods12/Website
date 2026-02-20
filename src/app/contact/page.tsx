@@ -6,9 +6,9 @@ export const metadata: Metadata = {
 };
 
 const socials = [
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Twitter", href: "https://twitter.com" },
+  { label: "GitHub", href: "https://github.com/markewoods12" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/mark-e-woods" },
+  { label: "X (Twitter)", href: "https://x.com/markewoods12" },
 ];
 
 export default function ContactPage() {
@@ -32,7 +32,12 @@ export default function ContactPage() {
           <h2 className="font-heading text-2xl italic text-foreground mb-8">
             Send a Message
           </h2>
-          <form className="space-y-6">
+          <form
+            action="mailto:hello@markewoods.com"
+            method="post"
+            encType="text/plain"
+            className="space-y-6"
+          >
             <div>
               <label
                 htmlFor="name"

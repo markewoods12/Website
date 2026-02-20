@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Thoughts on software engineering, technology, and building things.",
+    "Mark Woods writes about digital assets, AI and product management, and leadership. First-person, opinionated, no fluff.",
 };
 
 export default function BlogPage() {
