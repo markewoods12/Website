@@ -1,65 +1,91 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import ProjectCard from "@/components/ProjectCard";
+import BlogPostCard from "@/components/BlogPostCard";
+import { projects } from "@/data/projects";
+import { getAllPosts } from "@/lib/blog";
+import Link from "next/link";
 
 export default function Home() {
+  const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      <Hero />
+
+      {/* Featured Projects */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mb-12 flex items-end justify-between border-b border-border pb-8">
+          <div>
+            <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
+              01
+            </span>
+            <h2 className="font-heading text-3xl italic text-foreground">
+              Featured Projects
+            </h2>
+          </div>
+          <Link
+            href="/projects"
+            className="font-mono text-[10px] tracking-widest uppercase text-muted transition-colors hover:text-accent"
+          >
+            View all →
+          </Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
+
+      {/* Latest Blog Posts */}
+      {latestPosts.length > 0 && (
+        <section className="mx-auto max-w-6xl px-6 py-24">
+          <div className="mb-12 flex items-end justify-between border-b border-border pb-8">
+            <div>
+              <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
+                02
+              </span>
+              <h2 className="font-heading text-3xl italic text-foreground">
+                Latest Posts
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="font-mono text-[10px] tracking-widest uppercase text-muted transition-colors hover:text-accent"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              View all →
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {latestPosts.map((post) => (
+              <BlogPostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <div className="border border-border bg-card rounded-sm p-12 text-center">
+          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-4">
+            03
+          </span>
+          <h2 className="font-heading text-4xl italic text-foreground mb-4">
+            Let&apos;s Work Together
+          </h2>
+          <p className="text-base text-muted mb-8 max-w-md mx-auto leading-relaxed">
+            Have a project in mind or just want to connect? I&apos;d love to
+            hear from you.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
+            className="font-mono text-[11px] tracking-widest uppercase px-8 py-3 bg-accent text-background rounded-sm font-medium transition-all duration-200 hover:bg-accent-light inline-block"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Get in Touch
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
