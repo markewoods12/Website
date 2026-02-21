@@ -1,40 +1,30 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Mark Woods — Product Executive with 15+ years leading product management, financial systems, and blockchain technology.",
+    "Mark Woods — Head of Product at Bullish. 15+ years at the intersection of finance, technology, and digital assets.",
 };
 
-const expertise = [
-  "Product Management",
-  "Product Design",
-  "Blockchain & Web3",
-  "Financial Systems",
-  "Enterprise Software",
-  "Team Leadership",
-  "Strategic Roadmaps",
-  "Stakeholder Management",
-  "ERP Implementation",
-  "Process Improvement",
+const convictions = [
+  "Regulated industries can move fast — the constraint is usually culture, not compliance.",
+  "The exchange that wins in digital assets will win on trust, not fees. Reliability is the moat.",
+  "AI is a multiplier, not a replacement. The product managers who thrive are the ones who keep their judgment while delegating the rest.",
+  "Great products are built by people who care more about the outcome than the process.",
+  "Writing publicly makes you a better thinker. The discipline of explaining forces the gaps to show up.",
 ];
 
 const experience = [
   {
     title: "Head of Product",
     company: "Bullish",
+    companyUrl: "https://bullish.com",
+    irUrl: "https://bullish.com/investors",
     location: "Radford, VA (remote)",
     period: "Jan 2022 — Present",
     description:
-      "Responsible for the Product Management & Product Design organizations across all of Bullish Group — Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices.",
-  },
-  {
-    title: "Vice President, Product Management",
-    company: "Bullish",
-    location: "Radford, VA (remote)",
-    period: "Jul 2021 — Dec 2021",
-    description:
-      "Led multiple teams building the blockchain-based systems supporting the Bullish exchange platform, including Custody, Authentication & Authorization, and Core Blockchain — while simultaneously supporting Block.one.",
+      "Responsible for the Product Management and Product Design organizations across all of Bullish Group — Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices. Led the product organization through the exchange's NYSE IPO in August 2025 ($BLSH).",
   },
   {
     title: "Vice President, Product Management",
@@ -42,7 +32,7 @@ const experience = [
     location: "Blacksburg, VA",
     period: "Nov 2019 — Dec 2021",
     description:
-      "Defined and operated the Block.one Product Management Process. Built and managed teams of Product Managers, Business Analysts, and UX designers. Drove the internal five-quarter Product Roadmap across all product lines and aligned technical roadmaps to product strategy.",
+      "Defined and operated the Block.one Product Management Process. Built and managed teams of Product Managers, Business Analysts, and UX designers. Drove the internal five-quarter Product Roadmap across all product lines. Transitioned to Bullish VP PM role as the exchange was built out.",
   },
   {
     title: "Director, Finance Innovation",
@@ -50,47 +40,8 @@ const experience = [
     location: "Wilmington, NC",
     period: "Aug 2017 — Oct 2019",
     description:
-      "Owned product & release management, roadmaps, and software implementations across the GCD Finance organization — PPD's largest business unit by revenue. Led major initiatives including an ASC 605-to-606 systems conversion, a cloud-native month-end controls platform, and an Oracle Cloud ERP implementation.",
+      "Owned product and release management, roadmaps, and software implementations across the GCD Finance organization — PPD's largest business unit by revenue. Led major initiatives including an ASC 605-to-606 systems conversion, a cloud-native month-end controls platform, and an Oracle Cloud ERP implementation.",
   },
-  {
-    title: "Owner",
-    company: "12Logics LLC",
-    location: "Wilmington, NC",
-    period: "Mar 2016 — Oct 2019",
-    description:
-      "Founded and operated a consultancy specializing in software implementation, financial system development, blockchain technology (consulting, mining, and investing), and web-based application development.",
-  },
-  {
-    title: "Assoc. Director, Business Management Organization",
-    company: "PPD",
-    location: "Wilmington, NC",
-    period: "Nov 2014 — Oct 2016",
-    description:
-      "System owner of PPD's CA Clarity PPM implementation — managing project financials exceeding $100M/month and resourcing for 10,000+ employees. Led a team of 4 direct reports plus an outsourced managed services team across India, Mexico, and the USA. Restructured and rebranded the entire department, rebuilding 100% of its processes.",
-  },
-  {
-    title: "Project & Implementation Manager",
-    company: "PPD",
-    location: "Wilmington, NC",
-    period: "Nov 2013 — Nov 2014",
-    description:
-      "Managed the second-wave CA Clarity PPM implementation, delivering non-OOTB financial management functionality. Led global cross-functional teams through requirements, design, testing, and training.",
-  },
-  {
-    title: "Senior Implementation & Business Analyst",
-    company: "PPD",
-    location: "Wilmington, NC",
-    period: "Sep 2012 — Nov 2013",
-    description:
-      "Core team member for the first-wave CA Clarity PPM implementation, covering project and resource management. Responsible for requirements gathering, data structure design, system testing, and training facilitation.",
-  },
-];
-
-const earlier = [
-  { title: "Senior Financial Analyst – FP&A", company: "PPD", period: "Mar 2011 — Sep 2012" },
-  { title: "Project Cost Analyst", company: "PPD", period: "Sep 2009 — Mar 2011" },
-  { title: "Assoc. Financial Systems Analyst", company: "PPD", period: "Oct 2008 — Sep 2009" },
-  { title: "Associate", company: "UBS Financial Services", period: "Dec 2007 — Aug 2008" },
 ];
 
 export default function AboutPage() {
@@ -117,17 +68,30 @@ export default function AboutPage() {
         </div>
         <div className="space-y-4 text-base leading-relaxed text-muted max-w-2xl">
           <p>
-            I&apos;m the Head of Product at Bullish, based in Radford, Virginia, where I lead
-            Product Management and Product Design across the full breadth of Bullish Group —
-            Bullish Exchange, CoinDesk Media, CoinDesk Data, and CoinDesk Indices. It&apos;s a rare
-            scope: one role spanning a regulated digital asset exchange, the world&apos;s most trusted
-            crypto media brand, institutional-grade market data, and benchmark indices.
+            I&apos;m Mark Woods — Head of Product at Bullish, based in Radford, Virginia.
           </p>
           <p>
-            My background spans digital assets, fintech, blockchain, enterprise software, and
-            clinical research — giving me a perspective that bridges deep technical complexity with
-            business strategy. I&apos;m passionate about building and scaling high-performing product
-            teams, defining long-range roadmaps, and shipping products that create real value at scale.
+            I lead Product Management and Product Design across the full breadth of Bullish Group:
+            Bullish Exchange (a regulated digital asset exchange), CoinDesk Media, CoinDesk Data,
+            and CoinDesk Indices. It&apos;s a scope I&apos;ve spent 15 years building toward — one
+            role spanning a regulated exchange, the world&apos;s most trusted crypto media brand,
+            institutional-grade market data, and benchmark indices referenced by ETFs globally.
+          </p>
+          <p>
+            My path here ran through enterprise software, clinical research, blockchain
+            infrastructure, and the early days of institutional-grade crypto. I spent years at PPD
+            managing financial systems and large-scale project portfolios. Then Block.one, where I
+            built the product management function from scratch during the peak of blockchain
+            ambition. Then Bullish — first as VP, then as Head of Product through the
+            exchange&apos;s{" "}
+            <Link href="/ipo" className="text-accent/80 hover:text-accent transition-colors">
+              NYSE IPO in August 2025
+            </Link>
+            .
+          </p>
+          <p>
+            The through-line: complex systems, long time horizons, and the discipline to ship
+            products that actually work at scale.
           </p>
           <p>
             Outside of work, I&apos;ve spent 20+ years volunteering as a mentor and coach with
@@ -136,10 +100,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Experience */}
+      {/* What I Believe */}
       <section className="mb-20">
         <div className="flex items-center gap-4 mb-8 border-b border-border pb-4">
           <span className="font-mono text-[10px] tracking-widest uppercase text-accent/40">02</span>
+          <h2 className="font-heading text-2xl italic text-foreground">What I Believe</h2>
+        </div>
+        <ul className="space-y-5">
+          {convictions.map((conviction, i) => (
+            <li key={i} className="flex gap-5">
+              <span className="font-mono text-accent/40 text-[10px] mt-1.5 shrink-0">◆</span>
+              <p className="text-base leading-relaxed text-muted">{conviction}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Experience */}
+      <section className="mb-20">
+        <div className="flex items-center gap-4 mb-8 border-b border-border pb-4">
+          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/40">03</span>
           <h2 className="font-heading text-2xl italic text-foreground">Experience</h2>
         </div>
         <div className="space-y-0">
@@ -151,10 +131,34 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                 <div>
                   <h3 className="font-heading text-lg italic text-foreground">{role.title}</h3>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
                     <span className="font-mono text-[10px] tracking-wider uppercase text-accent">
-                      {role.company}
+                      {role.companyUrl ? (
+                        <a
+                          href={role.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-accent-light transition-colors"
+                        >
+                          {role.company}
+                        </a>
+                      ) : (
+                        role.company
+                      )}
                     </span>
+                    {role.irUrl && (
+                      <>
+                        <span className="text-border">·</span>
+                        <a
+                          href={role.irUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-[10px] tracking-wider uppercase text-muted/60 hover:text-accent transition-colors"
+                        >
+                          Investor Relations
+                        </a>
+                      </>
+                    )}
                     <span className="text-border">·</span>
                     <span className="font-mono text-[10px] tracking-wider text-muted/60">
                       {role.location}
@@ -170,32 +174,25 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* Earlier roles */}
+        {/* Earlier roles — one sentence */}
         <div className="mt-8 pt-8 border-t border-border">
           <span className="font-mono text-[10px] tracking-widest uppercase text-muted/40 block mb-4">
-            Earlier Experience
+            Earlier
           </span>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {earlier.map((role, i) => (
-              <div key={i} className="flex flex-col">
-                <span className="text-sm text-muted">{role.title}</span>
-                <div className="flex items-center gap-2 mt-0.5">
-                  <span className="font-mono text-[10px] tracking-wider uppercase text-accent/70">
-                    {role.company}
-                  </span>
-                  <span className="text-border">·</span>
-                  <span className="font-mono text-[10px] text-muted/50">{role.period}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-sm leading-relaxed text-muted max-w-2xl">
+            Earlier career at PPD across finance and project management roles (2008–2017), including
+            Senior Financial Analyst in FP&amp;A, Project Cost Analyst, Associate Financial Systems
+            Analyst, and several implementation-focused roles. Also founded and operated 12Logics
+            LLC (2016–2019), a boutique consultancy in software implementation and financial systems.
+            Prior to PPD: Associate at UBS Financial Services (2007–2008).
+          </p>
         </div>
       </section>
 
       {/* Education */}
       <section className="mb-20">
         <div className="flex items-center gap-4 mb-8 border-b border-border pb-4">
-          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/40">03</span>
+          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/40">04</span>
           <h2 className="font-heading text-2xl italic text-foreground">Education</h2>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
@@ -211,21 +208,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Expertise */}
+      {/* Holdings Disclosure */}
       <section>
-        <div className="flex items-center gap-4 mb-8 border-b border-border pb-4">
-          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/40">04</span>
-          <h2 className="font-heading text-2xl italic text-foreground">Areas of Expertise</h2>
+        <div className="flex items-center gap-4 mb-6 border-b border-border pb-4">
+          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/40">05</span>
+          <h2 className="font-heading text-2xl italic text-foreground">Holdings Disclosure</h2>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {expertise.map((item) => (
-            <span
-              key={item}
-              className="font-mono text-[10px] tracking-wider uppercase px-3 py-1.5 border border-border text-muted transition-colors hover:border-accent/30 hover:text-foreground"
-            >
-              {item}
-            </span>
-          ))}
+        <div className="space-y-3 text-sm leading-relaxed text-muted/70 max-w-2xl">
+          <p>
+            I personally hold positions in various digital assets, including bitcoin (BTC) and
+            ether (ETH). I may hold other digital assets from time to time. My holdings may change
+            without notice.
+          </p>
+          <p>
+            Nothing on this site constitutes investment advice or a recommendation to buy, sell, or
+            hold any asset.{" "}
+            <Link href="/disclaimer" className="text-accent/70 hover:text-accent transition-colors">
+              Full disclaimer →
+            </Link>
+          </p>
         </div>
       </section>
     </div>

@@ -1,95 +1,17 @@
 import Hero from "@/components/Hero";
-import ProjectCard from "@/components/ProjectCard";
 import BlogPostCard from "@/components/BlogPostCard";
-import { projects } from "@/data/projects";
 import { getAllPosts } from "@/lib/blog";
 import Image from "next/image";
 import Link from "next/link";
 
-const pillars = [
-  {
-    icon: "🏛️",
-    title: "Digital Assets",
-    description:
-      "Leading product strategy for one of the world's most technically advanced digital asset exchanges — across spot, derivatives, custody, media, and data.",
-  },
-  {
-    icon: "🤖",
-    title: "AI × Product",
-    description:
-      "Exploring how AI transforms product management, content creation, and decision-making. Building tools that put AI to work, not just on the roadmap.",
-  },
-  {
-    icon: "🎯",
-    title: "Leadership",
-    description:
-      "Building and scaling high-performing product and design organizations. Developing the people, processes, and culture that ship great products.",
-  },
-];
-
 export default function Home() {
-  const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
   const latestPosts = getAllPosts().slice(0, 3);
 
   return (
     <>
       <Hero />
 
-      {/* What I Do */}
-      <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="mb-8 border-b border-border pb-6">
-          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
-            01
-          </span>
-          <h2 className="font-heading text-3xl italic text-foreground">
-            What I Do
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="group border border-border bg-card rounded-sm p-6 transition-all duration-300 hover:border-accent/25 hover:bg-card-hover"
-            >
-              <div className="mb-5 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full" />
-              <span className="text-2xl mb-4 block">{pillar.icon}</span>
-              <h3 className="font-heading italic text-lg text-foreground mb-3">
-                {pillar.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted">
-                {pillar.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="mb-8 flex items-end justify-between border-b border-border pb-6">
-          <div>
-            <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
-              02
-            </span>
-            <h2 className="font-heading text-3xl italic text-foreground">
-              Featured Work
-            </h2>
-          </div>
-          <Link
-            href="/projects"
-            className="font-mono text-[10px] tracking-widest uppercase text-muted transition-colors hover:text-accent"
-          >
-            View all →
-          </Link>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-      </section>
-
-      {/* Bullish IPO Highlight */}
+      {/* Bullish IPO Highlight — slot 2 */}
       <section className="mx-auto max-w-6xl px-6 py-14">
         <Link href="/ipo" className="group block border border-border bg-card rounded-sm overflow-hidden transition-all duration-300 hover:border-accent/25 hover:bg-card-hover">
           <div className="grid md:grid-cols-2 gap-0">
@@ -110,7 +32,8 @@ export default function Home() {
                 Bullish Goes Public
               </h3>
               <p className="text-sm leading-relaxed text-muted mb-4">
-                $BLSH listed on the NYSE. After years of building, our team rang the Opening Bell at 11 Wall Street.
+                $BLSH listed on the NYSE. After years of building, our team rang the Opening Bell
+                at 11 Wall Street. A milestone worth remembering.
               </p>
               <span className="font-mono text-[10px] tracking-widest uppercase text-accent/70 group-hover:text-accent transition-colors">
                 View photos →
@@ -120,20 +43,20 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Latest Blog Posts */}
+      {/* Latest Writing */}
       {latestPosts.length > 0 && (
         <section className="mx-auto max-w-6xl px-6 py-14">
           <div className="mb-8 flex items-end justify-between border-b border-border pb-6">
             <div>
               <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-2">
-                03
+                01
               </span>
               <h2 className="font-heading text-3xl italic text-foreground">
                 Latest Writing
               </h2>
             </div>
             <Link
-              href="/blog"
+              href="/writing"
               className="font-mono text-[10px] tracking-widest uppercase text-muted transition-colors hover:text-accent"
             >
               View all →
@@ -147,19 +70,44 @@ export default function Home() {
         </section>
       )}
 
+      {/* About Teaser */}
+      <section className="mx-auto max-w-6xl px-6 py-14">
+        <div className="border border-border bg-card rounded-sm p-8 md:p-12">
+          <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-6">
+            02
+          </span>
+          <blockquote className="font-heading text-2xl italic text-foreground leading-snug mb-6 max-w-2xl">
+            &ldquo;I&apos;ve spent 15 years at the intersection of finance, technology, and
+            the messy reality of building products that actually work.&rdquo;
+          </blockquote>
+          <p className="text-base leading-relaxed text-muted mb-6 max-w-2xl">
+            Head of Product at Bullish. Former Block.one. The path ran through enterprise software,
+            clinical research, blockchain infrastructure, and the early days of institutional-grade
+            crypto — before landing here, building the exchange that went public on the NYSE in
+            August 2025.
+          </p>
+          <Link
+            href="/about"
+            className="font-mono text-[11px] tracking-widest uppercase text-accent transition-colors hover:text-accent-light"
+          >
+            Read more →
+          </Link>
+        </div>
+      </section>
+
       {/* Newsletter CTA */}
       <section className="mx-auto max-w-6xl px-6 py-14">
         <div className="border border-border bg-card rounded-sm p-8">
           <div className="max-w-xl mx-auto text-center">
             <span className="font-mono text-[10px] tracking-widest uppercase text-accent/60 block mb-4">
-              04
+              03
             </span>
             <h2 className="font-heading text-4xl italic text-foreground mb-4">
-              Stay in the Loop
+              Think Better About What You&apos;re Building
             </h2>
             <p className="text-base text-muted mb-8 leading-relaxed">
-              Writing about digital assets, AI-powered product management, and
-              leadership. No fluff — just the stuff worth reading.
+              I write about digital assets, AI-powered product management, and what it takes to
+              ship products in regulated industries. Twice a month. No fluff, no sponsored content.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
               <input
