@@ -1,13 +1,10 @@
-"use client";
+import { redirect } from "next/navigation";
+import { getAllSlugs } from "@/lib/blog";
 
-import { useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+export function generateStaticParams() {
+  return getAllSlugs().map((slug) => ({ slug }));
+}
 
-export default function BlogSlugRedirect() {
-  const router = useRouter();
-  const params = useParams();
-  useEffect(() => {
-    router.replace(`/writing/${params.slug}`);
-  }, [router, params.slug]);
-  return null;
+export default function BlogSlugRedirect({ params }: { params: { slug: string } }) {
+  redirect(`/writing/${params.slug}`);
 }
