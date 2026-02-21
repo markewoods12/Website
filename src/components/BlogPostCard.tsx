@@ -3,12 +3,20 @@ import type { BlogPostMeta } from "@/lib/blog";
 
 export default function BlogPostCard({ post }: { post: BlogPostMeta }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
+    <Link href={`/writing/${post.slug}`} className="group block">
       <article className="border border-border bg-card rounded-sm p-6 transition-all duration-300 hover:border-accent/25 hover:bg-card-hover">
         {/* Expanding accent line on hover */}
         <div className="mb-5 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full" />
 
         <div className="flex items-center gap-3 mb-3">
+          {post.pinned && (
+            <>
+              <span className="font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 text-accent border border-accent/30 bg-accent/10">
+                Featured
+              </span>
+              <span className="text-border">·</span>
+            </>
+          )}
           <time className="font-mono text-[10px] tracking-wider uppercase text-muted">
             {post.date}
           </time>

@@ -12,6 +12,8 @@ export interface BlogPostMeta {
   excerpt: string;
   tags: string[];
   readingTime: string;
+  pinned?: boolean;
+  disclaimer?: string;
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -37,10 +39,17 @@ export function getAllPosts(): BlogPostMeta[] {
       excerpt: data.excerpt ?? "",
       tags: data.tags ?? [],
       readingTime: stats.text,
+      pinned: data.pinned ?? false,
+      disclaimer: data.disclaimer ?? "standard",
     };
   });
 
-  return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
+  // Pinned posts first, then sorted by date descending
+  return posts.sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return a.date > b.date ? -1 : 1;
+  });
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
@@ -58,6 +67,8 @@ export function getPostBySlug(slug: string): BlogPost | null {
     excerpt: data.excerpt ?? "",
     tags: data.tags ?? [],
     readingTime: stats.text,
+    pinned: data.pinned ?? false,
+    disclaimer: data.disclaimer ?? "standard",
     content,
   };
 }

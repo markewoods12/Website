@@ -69,10 +69,10 @@ export default function Hero() {
           className="mb-10 max-w-xl mx-auto text-base leading-relaxed text-muted animate-fade-up"
           style={{ animationDelay: "260ms" }}
         >
-          Scaling a highly efficient and multi-faceted Product Management
-          organization for a leading digital asset exchange, media, and data
-          &amp; indices businesses. Building at the intersection of finance and
-          technology.
+          I&apos;ve spent 15 years building at the intersection of finance and
+          technology. Now I run product at Bullish — the digital asset exchange
+          that rang the NYSE Opening Bell in August 2025. I write about what
+          I&apos;m learning.
         </p>
 
         <div
@@ -80,10 +80,10 @@ export default function Hero() {
           style={{ animationDelay: "360ms" }}
         >
           <Link
-            href="/projects"
+            href="/writing"
             className="font-mono text-[11px] tracking-widest uppercase px-7 py-3 bg-accent text-background rounded-sm font-medium transition-all duration-200 hover:bg-accent-light"
           >
-            View Work
+            Read my writing →
           </Link>
           <Link
             href="/now"
